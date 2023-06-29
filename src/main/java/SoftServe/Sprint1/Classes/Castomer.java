@@ -1,4 +1,4 @@
-package SoftServe.Classes;
+package SoftServe.Sprint1.Classes;
 
 import lombok.Data;
 

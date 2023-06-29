@@ -1,4 +1,4 @@
-package SoftServe.Classes;
+package SoftServe.Sprint1.Classes;
 
 public class ParamValue {
     public void passArg(int i) {

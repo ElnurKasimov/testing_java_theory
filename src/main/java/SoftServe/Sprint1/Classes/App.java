@@ -1,4 +1,4 @@
-package SoftServe.Classes;
+package SoftServe.Sprint1.Classes;
 
 public class App {
     public static void main(String[] args) {
