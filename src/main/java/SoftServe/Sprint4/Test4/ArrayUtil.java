@@ -5,7 +5,6 @@ public class ArrayUtil {
         array[index] = element;
         return array[index];
     }
-
     public static void main(String[] args) {
         Integer[] numbers = new Integer[3];
         String[] words = new String[3];
