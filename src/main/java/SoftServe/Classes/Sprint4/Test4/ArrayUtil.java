@@ -1,4 +1,4 @@
-package SoftServe.Sprint4.Test4;
+package SoftServe.Classes.Sprint4.Test4;
 
 public class ArrayUtil {
     public static <T> T setAndReturn(T[] array, T element, int index) {

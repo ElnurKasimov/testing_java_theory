@@ -1,4 +1,4 @@
-package SoftServe.Sprint4.Test7;
+package SoftServe.Classes.Sprint4.Test7;
 
 import java.lang.annotation.*;
 import java.lang.reflect.*;

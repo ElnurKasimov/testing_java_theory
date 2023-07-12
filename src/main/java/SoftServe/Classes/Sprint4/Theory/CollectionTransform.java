@@ -1,4 +1,4 @@
-package SoftServe.Sprint4.Theory;
+package SoftServe.Classes.Sprint4.Theory;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package SoftServe.Sprint4.Test2;
+package SoftServe.Classes.Sprint4.Test2;
 
 import java.util.*;
 

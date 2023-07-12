@@ -1,4 +1,4 @@
-package SoftServe.Sprint4.Theory;
+package SoftServe.Classes.Sprint4.Theory;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package SoftServe.Sprint4.Test1;
+package SoftServe.Classes.Sprint4.Test1;
 
 import java.util.HashMap;
 import java.util.List;
