@@ -10,19 +10,20 @@ public class MyUtils {
     public static void main(String[] args) {
         java.util.List<String> myList = new java.util.ArrayList<>();
         Map<String, List<String>> map = Map.of(
-                "key1", Arrays.asList("vAlue1 ", " value2"),
-                "key2", Arrays.asList("value3", "value1 "),
-                "key3", Arrays.asList("Value5", "value6")
+                "key1", Arrays.asList(" ", ""),
+                "key2", Arrays.asList("             ", "   "),
+                "key3", Arrays.asList(null, "")
         );
 
-        Stream<String> streamOfLists = map.values().stream().
-                flatMap(List::stream)
-                .filter(str -> !(str.equals("") || str == null) )
-                .map(String::toLowerCase)
-                .map(String::trim)
+        Stream<String> streamOfLists = map.values().stream()
+                .flatMap(List::stream)
+                .filter(str -> str != null)
+                .filter(str -> !(str.equals("")))
+                .map(str -> str.toLowerCase().replaceAll("\\s", ""))
+                .map(str -> str.substring(0,1).toUpperCase()+str.substring(1))
                 .distinct()
                 .sorted();
-        streamOfLists.forEach(System.out::print);
+        streamOfLists.forEach(System.out::println);
     }
 
 }
