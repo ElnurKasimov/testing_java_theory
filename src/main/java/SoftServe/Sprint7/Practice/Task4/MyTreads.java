@@ -11,12 +11,10 @@ class MyThreads {
             public void run() {
                 try {
                     synchronized (den) {
-                        //den.wait();
                         for (int i = 0; i < 5; i++, n++)
                             System.out.println("Thread1 n = " + n);
-
+                            den.wait(1000);
                         synchronized (ada) {
-
                             ada.notify();
                             for (int i = 0; i < 5; i++, m++)
                                 System.out.println("Thread1 m = " + m);
@@ -33,8 +31,7 @@ class MyThreads {
             public void run() {
                 try {
                         synchronized (ada) {
-                            ada.wait(100);
-                           // den.notify();
+                            ada.wait(1000);
                             for (int i = 0; i < 5; i++, m++)
                                 System.out.println("Thread2 m = " + m);
                             synchronized (den) {
@@ -50,13 +47,7 @@ class MyThreads {
                 }
         };
 
-        try {
-            t1.start();
-           Thread.sleep(100);
-            t2.start();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        t2.start();
+        t1.start();
     }
 }
