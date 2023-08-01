@@ -1,6 +1,10 @@
 package SoftServe.Sprint5.Test1;
 
+import java.sql.SQLOutput;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class MyUtils {
     public static int getCount( int[] array, Predicate<Integer> condition) {
