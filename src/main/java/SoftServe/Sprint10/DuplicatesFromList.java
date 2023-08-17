@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 public class DuplicatesFromList {
     public static void main(String[] args) {
 
+
+
         List<String> tasks = List.of("one", "two", "three", "one", "three");
         Map<String, Long> duplicatesMap = tasks.stream()
                 .collect(Collectors.groupingBy(task -> task, Collectors.counting()));
