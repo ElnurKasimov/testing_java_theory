@@ -15,7 +15,12 @@ public class PrintStackTraceTest {
             PrintWriter pw = new PrintWriter(sw);
             e.printStackTrace(pw);
             String myStackTrace = sw.toString();
-            System.out.println("myStackTrace :\n" + myStackTrace + "the end.");
+            String debugPropertyValue = System.getProperty("debug");
+            String debugEnvValue = System.getenv("DEBUG");
+            if( (debugPropertyValue != null && debugPropertyValue.equals("true")) ||
+                (debugEnvValue != null && debugEnvValue.equals("true")) ) {
+                System.out.println("myStackTrace :\n" + myStackTrace + "the end.");
+            }
         }
     }
 }
