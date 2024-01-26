@@ -1,14 +1,19 @@
 package Core.forEachTesting;
 
+import java.beans.JavaBean;
+
+
 class Person {
+    @Deprecated
     private String name;
+
     private int age;
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
-
+    @Deprecated
     public String getName() {
         return name;
     }

@@ -1,5 +1,8 @@
 package Core.forEachTesting;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +22,18 @@ public class Main {
             }
         }
         System.out.println(personList.toString());
+        printClassAnnotations(Person.class);
+
+    }
+
+    public static void printClassAnnotations(Class<?> classObject) {
+        for (Annotation annotation : classObject.getAnnotations()) {
+            String longName = annotation.annotationType().getName();
+            int lastDotIndex = longName.lastIndexOf('.');
+            //int openingBracketIndex = annotation.toString().indexOf('(', lastDotIndex);
+            System.out.println(longName.substring(lastDotIndex + 1));
+
+        }
     }
 
 }
