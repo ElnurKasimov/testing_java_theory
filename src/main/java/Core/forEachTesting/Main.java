@@ -32,7 +32,6 @@ public class Main {
             int lastDotIndex = longName.lastIndexOf('.');
             //int openingBracketIndex = annotation.toString().indexOf('(', lastDotIndex);
             System.out.println(longName.substring(lastDotIndex + 1));
-
         }
     }
 
