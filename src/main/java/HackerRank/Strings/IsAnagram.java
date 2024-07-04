@@ -6,8 +6,8 @@ import java.util.*;
 public class IsAnagram
 {
     static boolean isAnagram(String a, String b) {
-        char[] a1 = a.toCharArray();
-        char[] b1 = b.toCharArray();
+        char[] a1 = a.toLowerCase().toCharArray();
+        char[] b1 = b.toLowerCase().toCharArray();
         Map<Character,Integer> mapA = new HashMap<>();
         Map<Character,Integer> mapB = new HashMap<>();
         for (int i = 0; i < a1.length; i++) {
