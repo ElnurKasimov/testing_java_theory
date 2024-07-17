@@ -1,4 +1,4 @@
-package HackerRank.LinkedList;
+package HackerRank.List;
 
 import java.util.*;
 
