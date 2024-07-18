@@ -45,7 +45,8 @@ public class WordStartOrEnd {
             String line = scanner.nextLine();
             String[] words = line.trim().split("[ ,?!]+");
             System.out.println("words = " + Arrays.toString(words));
-            Pattern pattern = Pattern.compile("(?i)^(" + part + ".*|.*" + part + ")$");
+//            Pattern pattern = Pattern.compile("(?i)^(" + part + ".*|.*" + part + ")$");
+            Pattern pattern = Pattern.compile("(?i).*\\B" + part + "\\B.*");
             boolean found = false;
             for (String word : words) {
                 if(pattern.matcher(word).matches()) {
