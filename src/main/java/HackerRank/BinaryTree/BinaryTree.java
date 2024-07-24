@@ -5,18 +5,19 @@ import java.util.*;
 
 
 public class BinaryTree{
-    private static Node root; // the tree root
-
 
     public static int getHeight(Node root){
+
         if(root == null) {
             return -1;
         } else {
             return 1 + Math.max(getHeight(root.left),getHeight(root.right));
         }
+
     }
 
     public static Node insert(Node root,int data){
+
         if(root==null){
             return new Node(data);
         }
@@ -28,15 +29,36 @@ public class BinaryTree{
             }
             return root;
         }
+
     }
 
-    public static void traverse(Node root) {
+    public static void traverseInOrder(Node root) {
+
         if(root != null) {
-            traverse(root.left);
+            traverseInOrder(root.left);
             System.out.print(root.data + " ");
-            traverse(root.right);
+            traverseInOrder(root.right);
         }
+
     }
+
+    public static void traverseLevelOrder(Node root) {
+        Queue<Node> traversal = new LinkedList<>();
+        traversal.add(root);
+        while (!traversal.isEmpty()) {
+            Node toTreat = traversal.remove();
+            System.out.print(toTreat.data + " ");
+            if(toTreat.left != null) {
+                traversal.add(toTreat.left);
+            }
+            if(toTreat.right != null) {
+                traversal.add(toTreat.right);
+            }
+        }
+
+    }
+
+
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int T=sc.nextInt();
@@ -45,11 +67,17 @@ public class BinaryTree{
             int data=sc.nextInt();
             root=insert(root,data);
         }
-        System.out.println("Traversal the tree:");
-        traverse(root);
+
+        System.out.println("Traversal the tree in-order:");
+        traverseInOrder(root);
         System.out.println();
 
         int height=getHeight(root);
         System.out.println("The tree height: " + height);
+
+        System.out.println("Traversal the tree level-order:");
+        traverseLevelOrder(root);
+        System.out.println();
+
     }
 }
