@@ -67,7 +67,8 @@ public class FlippingMatrix {
         int q = Integer.parseInt(bufferedReader.readLine().trim());
 
         IntStream.range(0, q).forEach(qItr -> {
-            try {
+
+       try {
                 int n = Integer.parseInt(bufferedReader.readLine().trim());
 
                 List<List<Integer>> matrix = new ArrayList<>();
