@@ -29,6 +29,7 @@ public class BubbleSort {
                 }
             }
         }
+        System.out.println(list.toString());
         return numberOfSwaps;
     }
 
