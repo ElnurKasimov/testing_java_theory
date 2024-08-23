@@ -15,7 +15,6 @@ class ClockFactory {
      * If some other type is passed, the method produces ToyClock.
      */
     public Clock produce(String type) {
-        type.to
         switch(type) {
             case "SAND":
                 return new SandClock();
