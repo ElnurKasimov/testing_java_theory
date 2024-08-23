@@ -3,7 +3,6 @@ package HyperSkill.Patterns.SimpleFactory;
 import java.util.Scanner;
 
 class Time {
-
     int hour;
     int minute;
     int second;
