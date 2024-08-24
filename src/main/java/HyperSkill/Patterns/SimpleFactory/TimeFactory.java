@@ -36,7 +36,7 @@ class Time {
     }
 
     public static Time of(int hour, int minute, int second) {
-        // write your code here
+        return Time.of(0,0,0);
     }
 }
 
