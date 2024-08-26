@@ -29,18 +29,21 @@ class Time {
         int minute = (int) withoutDays%3600 / 60;
         int second = (int) withoutDays - minute*60 - hour*3600;
         Time result = new Time();
-        result.hour = 0;
-        result.minute = 0;
-        result.second = 0;
+        result.hour = hour;
+        result.minute = minute;
+        result.second = second;
         return result;
     }
 
     public static Time of(int hour, int minute, int second) {
-        return Time.of(0,0,0);
+        Time result = new Time();
+        result.hour = hour;
+        result.minute = minute;
+        result.second = second;
+        return result;
     }
 }
 
-/* Do not change code below */
 public class TimeFactory {
 
     public static void main(String[] args) {
