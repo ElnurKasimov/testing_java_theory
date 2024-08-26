@@ -40,6 +40,11 @@ class Time {
         result.hour = hour;
         result.minute = minute;
         result.second = second;
+        if( (hour > 23 || hour < 0) ||
+                (minute > 59 || minute < 0) ||
+                (second > 59 || second < 0) ) {
+            return null;
+        }
         return result;
     }
 }
