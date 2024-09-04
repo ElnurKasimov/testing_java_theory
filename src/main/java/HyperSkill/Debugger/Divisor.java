@@ -1,18 +1,12 @@
 package HyperSkill.Debugger;
 
-public class PrimeNumber {
+class Divisor {
     public static void main(String[] args) {
-        int greatestPrimeInRange = 2;
-        for (int number = 2; number <= 1000; number++) {
-            if (isPrime(number) && number > greatestPrimeInRange) {
-                greatestPrimeInRange = number;
-            }
-        }
+        boolean result = isPrime(5977);
     }
 
     static boolean isPrime(int number) {
         for (int i = 2; i <= number / 2; i++) {
-
             if (number % i != 0) {
                 continue;
             } else {
