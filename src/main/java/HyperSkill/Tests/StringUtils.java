@@ -14,4 +14,5 @@ class StringUtils {
         }
         return true;
     }
+
 }
