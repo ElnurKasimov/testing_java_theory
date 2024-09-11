@@ -2,6 +2,7 @@ package HyperSkill.ComparatorTesting;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 class StockItem {
     private String name;
@@ -30,16 +31,29 @@ class StockItem {
     public int getQuantity() {
         return quantity;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StockItem stockItem = (StockItem) o;
+        return Double.compare(getPricePerUnit(), stockItem.getPricePerUnit()) == 0 && getQuantity() == stockItem.getQuantity() && Objects.equals(getName(), stockItem.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getPricePerUnit(), getQuantity());
+    }
 }
 
 public class Utils {
     public static List<StockItem> sort(List<StockItem> stockItems) {
-        Comparator<StockItem> c = new Comparator<StockItem>() {
-            @Override
-            public int compare(StockItem s1, StockItem s2) {
-                return Double.compare(s1.getPricePerUnit()*s1.getQuantity(),s2.getPricePerUnit()*s2.getQuantity());
-            }
-        };
-        return stockItems.stream().sorted(с).toList();
+        return stockItems.stream().sorted(
+                new Comparator<StockItem>() {
+                    @Override
+                    public int compare(StockItem s1, StockItem s2) {
+                        return Double.compare(s2.getPricePerUnit()*s2.getQuantity(),s1.getPricePerUnit()*s1.getQuantity());
+                    }
+                }).toList();
     }
 }
