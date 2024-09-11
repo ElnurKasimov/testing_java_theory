@@ -48,12 +48,18 @@ class StockItem {
 
 public class Utils {
     public static List<StockItem> sort(List<StockItem> stockItems) {
-        return stockItems.stream().sorted(
-                new Comparator<StockItem>() {
-                    @Override
-                    public int compare(StockItem s1, StockItem s2) {
-                        return Double.compare(s2.getPricePerUnit()*s2.getQuantity(),s1.getPricePerUnit()*s1.getQuantity());
-                    }
-                }).toList();
+//        return stockItems.stream().sorted(
+//                new Comparator<StockItem>() {
+//                    @Override
+//                    public int compare(StockItem s1, StockItem s2) {
+//                        return Double.compare(s2.getPricePerUnit()*s2.getQuantity(),s1.getPricePerUnit()*s1.getQuantity());
+//                    }
+//                }).toList();
+
+        return stockItems.stream()
+                .sorted(
+                (s1, s2) -> Double.compare(s2.getPricePerUnit()*s2.getQuantity(),s1.getPricePerUnit()*s1.getQuantity())
+                 )
+                .toList();
     }
 }
